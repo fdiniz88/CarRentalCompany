@@ -1,0 +1,171 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{494EF9A4-C6F9-49DA-9AEF-9D2070576577}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{96ED1345-30E1-4BF7-BEE1-215A7B46EA05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarMicroservice", "CarMicroservice", "{53A82F5C-807B-4FB2-91F9-2FEB7A6624CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Common.Domain", "CarRentalCompany.Common.Domain\CarRentalCompany.Common.Domain.csproj", "{59A4BB25-5DAB-45ED-B325-191C0ECE1DB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Common.Infra.DataAccess", "CarRentalCompany.Common.Infra.DataAccess\CarRentalCompany.Common.Infra.DataAccess.csproj", "{1A2270E6-2134-4B1F-AEDF-6591524A1A79}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Common.Infra.Helper", "CarRentalCompany.Common.Infra.Helper\CarRentalCompany.Common.Infra.Helper.csproj", "{AF203724-3F75-4021-82D2-DBB0E749C351}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{BC1D5737-542C-4F9B-9D4B-2187B8C692AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{38ADFA00-BABF-449D-A9D5-62D429D3B639}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{C8D73925-7265-45F8-8819-9B8C080EDF3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.CarMicroservice.Domain", "CarRentalCompany.Microservices.CarMicroservice.Domain\CarRentalCompany.Microservices.CarMicroservice.Domain.csproj", "{547E9A0D-68BF-4B9D-B6B9-8AAB65B34ABD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.CarMicroservice.Infra.DataAccess", "CarRentalCompany.Microservices.CarMicroservice.Infra.DataAccess\CarRentalCompany.Microservices.CarMicroservice.Infra.DataAccess.csproj", "{C413BA6E-7885-42DF-9BEE-4FBDED63FD8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.CarMicroservice.Application.Api", "CarRentalCompany.Microservices.CarMicroservice.Application.Api\CarRentalCompany.Microservices.CarMicroservice.Application.Api.csproj", "{86DF139E-6B82-4FA3-98D2-B9486308539D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReserveMicroservice", "ReserveMicroservice", "{D8A680FC-BA57-49D0-A11A-F1F61581878A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{FBD7CB61-0E63-4502-9979-86B617A2119E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{2766E635-7372-4175-A0D2-2283FF016DE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{6F89C2C9-B803-4D64-BF8C-99C833429D0F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.ReserveMicroservice.Infra", "CarRentalCompany.Microservices.ReserveMicroservice.Infra\CarRentalCompany.Microservices.ReserveMicroservice.Infra.csproj", "{DF4D04E3-03F3-4193-A4B6-3B16C2CB0EA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.ReserveMicroservice.Domain", "CarRentalCompany.Microservices.ReserveMicroservice.Domain\CarRentalCompany.Microservices.ReserveMicroservice.Domain.csproj", "{E4365114-0E3E-4044-B6F8-6EFC269D2662}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.ReserveMicroservice.Api", "CarRentalCompany.Microservices.ReserveMicroservice.Api\CarRentalCompany.Microservices.ReserveMicroservice.Api.csproj", "{0115ACCC-8C65-43FE-A62D-E09FD08C7BD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IamMicroservice", "IamMicroservice", "{3E262382-60BB-40D3-B94D-EA7D0DDD5418}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.IamMicroservice.Admin", "CarRentalCompany.Microservices.IamMicroservice.Admin\CarRentalCompany.Microservices.IamMicroservice.Admin.csproj", "{1DF81B25-1A3A-44D4-A13A-396164DBFDD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.IamMicroservice.Admin.Api", "CarRentalCompany.Microservices.IamMicroservice.Admin.Api\CarRentalCompany.Microservices.IamMicroservice.Admin.Api.csproj", "{F9724131-FCB4-4D45-9E01-B4D16E4D8AE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.MySql", "CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.MySql\CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.MySql.csproj", "{B8920B59-5F85-4111-BBD6-7E3A0BFF5F73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.PostgreSQL", "CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.PostgreSQL\CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.PostgreSQL.csproj", "{27C8B725-F490-4B42-BD3C-9807EC7EF431}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.Shared", "CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.Shared\CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.Shared.csproj", "{12CEE060-A180-4850-83BF-71C7E332ED27}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.SqlServer", "CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.SqlServer\CarRentalCompany.Microservices.IamMicroservice.Admin.EntityFramework.SqlServer.csproj", "{9863D949-97F1-4B83-85F0-117E90B3B619}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.IamMicroservice.Shared", "CarRentalCompany.Microservices.IamMicroservice.Shared\CarRentalCompany.Microservices.IamMicroservice.Shared.csproj", "{3EADE8E6-155C-4294-A801-5AD0979CB4AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalCompany.Microservices.IamMicroservice.STS.Identity", "CarRentalCompany.Microservices.IamMicroservice.STS.Identity\CarRentalCompany.Microservices.IamMicroservice.STS.Identity.csproj", "{10C319CE-F1EC-4588-95FA-8FECB0AE02FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59A4BB25-5DAB-45ED-B325-191C0ECE1DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A4BB25-5DAB-45ED-B325-191C0ECE1DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A4BB25-5DAB-45ED-B325-191C0ECE1DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A4BB25-5DAB-45ED-B325-191C0ECE1DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A2270E6-2134-4B1F-AEDF-6591524A1A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A2270E6-2134-4B1F-AEDF-6591524A1A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A2270E6-2134-4B1F-AEDF-6591524A1A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A2270E6-2134-4B1F-AEDF-6591524A1A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF203724-3F75-4021-82D2-DBB0E749C351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF203724-3F75-4021-82D2-DBB0E749C351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF203724-3F75-4021-82D2-DBB0E749C351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF203724-3F75-4021-82D2-DBB0E749C351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{547E9A0D-68BF-4B9D-B6B9-8AAB65B34ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{547E9A0D-68BF-4B9D-B6B9-8AAB65B34ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{547E9A0D-68BF-4B9D-B6B9-8AAB65B34ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{547E9A0D-68BF-4B9D-B6B9-8AAB65B34ABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C413BA6E-7885-42DF-9BEE-4FBDED63FD8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C413BA6E-7885-42DF-9BEE-4FBDED63FD8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C413BA6E-7885-42DF-9BEE-4FBDED63FD8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C413BA6E-7885-42DF-9BEE-4FBDED63FD8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86DF139E-6B82-4FA3-98D2-B9486308539D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86DF139E-6B82-4FA3-98D2-B9486308539D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86DF139E-6B82-4FA3-98D2-B9486308539D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86DF139E-6B82-4FA3-98D2-B9486308539D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF4D04E3-03F3-4193-A4B6-3B16C2CB0EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4D04E3-03F3-4193-A4B6-3B16C2CB0EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4D04E3-03F3-4193-A4B6-3B16C2CB0EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4D04E3-03F3-4193-A4B6-3B16C2CB0EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4365114-0E3E-4044-B6F8-6EFC269D2662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4365114-0E3E-4044-B6F8-6EFC269D2662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4365114-0E3E-4044-B6F8-6EFC269D2662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4365114-0E3E-4044-B6F8-6EFC269D2662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0115ACCC-8C65-43FE-A62D-E09FD08C7BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0115ACCC-8C65-43FE-A62D-E09FD08C7BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0115ACCC-8C65-43FE-A62D-E09FD08C7BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0115ACCC-8C65-43FE-A62D-E09FD08C7BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF81B25-1A3A-44D4-A13A-396164DBFDD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF81B25-1A3A-44D4-A13A-396164DBFDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF81B25-1A3A-44D4-A13A-396164DBFDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF81B25-1A3A-44D4-A13A-396164DBFDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9724131-FCB4-4D45-9E01-B4D16E4D8AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9724131-FCB4-4D45-9E01-B4D16E4D8AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9724131-FCB4-4D45-9E01-B4D16E4D8AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9724131-FCB4-4D45-9E01-B4D16E4D8AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8920B59-5F85-4111-BBD6-7E3A0BFF5F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8920B59-5F85-4111-BBD6-7E3A0BFF5F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8920B59-5F85-4111-BBD6-7E3A0BFF5F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8920B59-5F85-4111-BBD6-7E3A0BFF5F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C8B725-F490-4B42-BD3C-9807EC7EF431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C8B725-F490-4B42-BD3C-9807EC7EF431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C8B725-F490-4B42-BD3C-9807EC7EF431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C8B725-F490-4B42-BD3C-9807EC7EF431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12CEE060-A180-4850-83BF-71C7E332ED27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12CEE060-A180-4850-83BF-71C7E332ED27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12CEE060-A180-4850-83BF-71C7E332ED27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12CEE060-A180-4850-83BF-71C7E332ED27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9863D949-97F1-4B83-85F0-117E90B3B619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9863D949-97F1-4B83-85F0-117E90B3B619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9863D949-97F1-4B83-85F0-117E90B3B619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9863D949-97F1-4B83-85F0-117E90B3B619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EADE8E6-155C-4294-A801-5AD0979CB4AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EADE8E6-155C-4294-A801-5AD0979CB4AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EADE8E6-155C-4294-A801-5AD0979CB4AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EADE8E6-155C-4294-A801-5AD0979CB4AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C319CE-F1EC-4588-95FA-8FECB0AE02FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C319CE-F1EC-4588-95FA-8FECB0AE02FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C319CE-F1EC-4588-95FA-8FECB0AE02FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C319CE-F1EC-4588-95FA-8FECB0AE02FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{53A82F5C-807B-4FB2-91F9-2FEB7A6624CB} = {96ED1345-30E1-4BF7-BEE1-215A7B46EA05}
+		{59A4BB25-5DAB-45ED-B325-191C0ECE1DB1} = {494EF9A4-C6F9-49DA-9AEF-9D2070576577}
+		{1A2270E6-2134-4B1F-AEDF-6591524A1A79} = {494EF9A4-C6F9-49DA-9AEF-9D2070576577}
+		{AF203724-3F75-4021-82D2-DBB0E749C351} = {494EF9A4-C6F9-49DA-9AEF-9D2070576577}
+		{BC1D5737-542C-4F9B-9D4B-2187B8C692AA} = {53A82F5C-807B-4FB2-91F9-2FEB7A6624CB}
+		{38ADFA00-BABF-449D-A9D5-62D429D3B639} = {53A82F5C-807B-4FB2-91F9-2FEB7A6624CB}
+		{C8D73925-7265-45F8-8819-9B8C080EDF3A} = {53A82F5C-807B-4FB2-91F9-2FEB7A6624CB}
+		{547E9A0D-68BF-4B9D-B6B9-8AAB65B34ABD} = {38ADFA00-BABF-449D-A9D5-62D429D3B639}
+		{C413BA6E-7885-42DF-9BEE-4FBDED63FD8D} = {C8D73925-7265-45F8-8819-9B8C080EDF3A}
+		{86DF139E-6B82-4FA3-98D2-B9486308539D} = {BC1D5737-542C-4F9B-9D4B-2187B8C692AA}
+		{D8A680FC-BA57-49D0-A11A-F1F61581878A} = {96ED1345-30E1-4BF7-BEE1-215A7B46EA05}
+		{FBD7CB61-0E63-4502-9979-86B617A2119E} = {D8A680FC-BA57-49D0-A11A-F1F61581878A}
+		{2766E635-7372-4175-A0D2-2283FF016DE2} = {D8A680FC-BA57-49D0-A11A-F1F61581878A}
+		{6F89C2C9-B803-4D64-BF8C-99C833429D0F} = {D8A680FC-BA57-49D0-A11A-F1F61581878A}
+		{DF4D04E3-03F3-4193-A4B6-3B16C2CB0EA2} = {6F89C2C9-B803-4D64-BF8C-99C833429D0F}
+		{E4365114-0E3E-4044-B6F8-6EFC269D2662} = {2766E635-7372-4175-A0D2-2283FF016DE2}
+		{0115ACCC-8C65-43FE-A62D-E09FD08C7BD7} = {FBD7CB61-0E63-4502-9979-86B617A2119E}
+		{3E262382-60BB-40D3-B94D-EA7D0DDD5418} = {96ED1345-30E1-4BF7-BEE1-215A7B46EA05}
+		{1DF81B25-1A3A-44D4-A13A-396164DBFDD9} = {3E262382-60BB-40D3-B94D-EA7D0DDD5418}
+		{F9724131-FCB4-4D45-9E01-B4D16E4D8AE9} = {3E262382-60BB-40D3-B94D-EA7D0DDD5418}
+		{B8920B59-5F85-4111-BBD6-7E3A0BFF5F73} = {3E262382-60BB-40D3-B94D-EA7D0DDD5418}
+		{27C8B725-F490-4B42-BD3C-9807EC7EF431} = {3E262382-60BB-40D3-B94D-EA7D0DDD5418}
+		{12CEE060-A180-4850-83BF-71C7E332ED27} = {3E262382-60BB-40D3-B94D-EA7D0DDD5418}
+		{9863D949-97F1-4B83-85F0-117E90B3B619} = {3E262382-60BB-40D3-B94D-EA7D0DDD5418}
+		{3EADE8E6-155C-4294-A801-5AD0979CB4AC} = {3E262382-60BB-40D3-B94D-EA7D0DDD5418}
+		{10C319CE-F1EC-4588-95FA-8FECB0AE02FB} = {3E262382-60BB-40D3-B94D-EA7D0DDD5418}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A610DD48-8192-4A66-8449-0A88AE82ED29}
+	EndGlobalSection
+EndGlobal
