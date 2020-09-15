@@ -58,7 +58,7 @@ namespace CarRentalCompany.App.Application
                 Address = "https://CarRentalCompany-fernando-iam-microservice-identity.azurewebsites.net/connect/token",
                 ClientId = "CarRentalCompanyMobileApp_ClientId",
                 UserName = "admin",
-                Password = "111288Fer$"
+                Password = "xxxxxxxxxx"
             }).Result;
 
             return response.AccessToken;
