@@ -4,10 +4,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using CarRentalCompany.Microservices.CarMicroservice.Domain.AggregatesModel.CarAggregate;
+using Microsoft.AspNetCore.Authorization;
 
 namespace carRentalCompany.Microservices.carMicroservice.Application.Api.Controllers
 {
     [ApiController]
+    [Authorize(Roles = "ReserveHolder")]
     [Route("api/[controller]")]
     public class CarsController : ControllerBase
     {
@@ -25,11 +27,19 @@ namespace carRentalCompany.Microservices.carMicroservice.Application.Api.Control
         /// <returns>Object containing car information
         /// </returns>
         [HttpGet]
+
         public async Task<ActionResult<IEnumerable<Car>>> Getcars()
         {
             try
             {
-                return Ok(await _CarService.Getcars());
+                var Cars = await _CarService.GetCars();
+
+                if (Cars != null)
+                {
+                    return Ok(Cars);
+                }
+
+                return NotFound();
             }
             catch (Exception ex)
             {
@@ -48,7 +58,8 @@ namespace carRentalCompany.Microservices.carMicroservice.Application.Api.Control
         {
             try
             {
-                return Ok(await _CarService.Getcar(id));
+                var cars = await _CarService.GetCar(id);
+                return Ok(cars);
             }
             catch (Exception ex)
             {
@@ -67,7 +78,7 @@ namespace carRentalCompany.Microservices.carMicroservice.Application.Api.Control
         {
             try
             {
-                if (id != car.CarId)
+                if (id != car.Id)
                 {
                     return BadRequest();
                 }
@@ -88,12 +99,15 @@ namespace carRentalCompany.Microservices.carMicroservice.Application.Api.Control
         /// <returns>Object containing car information
         /// </returns>
         [HttpPost]
-        public async Task<ActionResult<Car>> PostCar(Car car)
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<Car>> PostCar([FromBody]Car car)
         {
             try
             {
-                var resultado = _CarService.PostCar(car);
+               // var resultado = _CarService.PostCar(car);
                 var result = await _CarService.PostCar(car);
+
                 return Created("", result);
             }
             catch (Exception ex)

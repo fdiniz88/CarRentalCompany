@@ -8,8 +8,8 @@ namespace CarRentalCompany.Microservices.CarMicroservice.Domain.AggregatesModel.
 {
     public interface ICarService
     {        
-        Task<IEnumerable<Car>> Getcars();
-        Task<Car> Getcar(Guid id);
+        Task<IEnumerable<Car>> GetCars();
+        Task<Car> GetCar(Guid id);
         Task<ReturnResult> PutCar(Guid id, Car car);
         Task<ReturnResult> PostCar(Car car);
         Task<ReturnResult> DeleteCar(Guid id);

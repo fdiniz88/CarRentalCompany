@@ -1,29 +1,46 @@
 ﻿using CarRentalCompany.Microservices.ReserveMicroservice.Domain.AggregatesModel.ReserveAggregate.Extensions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace CarRentalCompany.Microservices.ReserveMicroservice.Domain.AggregatesModel.ReserveAggregate
 {
     //Value Object
     public class MoneyValue : ValueObject
-    {
-        public Decimal Value { get; }
+    {        
+        public Guid Id { get; set; }
+        public Decimal Value { get; set; }
+        public string Currency { get; set; }      
 
-        public string Currency { get; }
-
-        //private MoneyValue(Decimal value, string currency)
-        //{
-        //    this.Value = value;
-        //    this.Currency = currency;
-        //}
-
+        public MoneyValue()
+        {
+        }
         public MoneyValue(Decimal value, string currency)
         {
             this.Value = value;
             this.Currency = currency;
         }
+        public static MoneyValue Parse(string amountStr)
+        {
+            var splittedAmount = amountStr.Split(' ');
+            string currency = splittedAmount[1];
+            Decimal value = Decimal.Parse(splittedAmount[0]);
+            return new MoneyValue(value, currency);
+        }
 
+        public static string ParseStr(MoneyValue amountStr)
+        {
+            //var splittedAmount = amountStr.Split(' ');
+            //string currency = splittedAmount[1];
+            //Decimal value = Decimal.Parse(splittedAmount[0]);
+            return "a";
+        }
+
+        public static MoneyValue NewAmount(Decimal value, string currency )
+        {
+            return new MoneyValue(value, currency);
+        }
         public static MoneyValue Of(Decimal value, string currency)
         {
             CheckRule(new MoneyValueMustHaveCurrencyRule(currency));

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CarRentalCompany.App.UI.CrossPlatformApp.Views.SignInPage"
+             BackgroundImage="../Login.png"
+             >
+
+    
+        <StackLayout Margin="64" VerticalOptions="CenterAndExpand">            
+
+            <Entry  x:Name="EntryUsername" Placeholder="Usuário" Text="{Binding Usuario}" TextColor="White" PlaceholderColor="White"></Entry>
+            <Entry x:Name="EntryPassword" Placeholder="Senha" Text="{Binding Senha}" IsPassword="True" TextColor="White" PlaceholderColor="White"></Entry>
+            <Button x:Name="ButtonSignIn" Text="SignIn" Clicked="ButtonSignIn_Clicked" />
+            <Button x:Name="ButtonSignUp" Text="SignUp" Clicked="ButtonSignUp_Clicked" />
+        </StackLayout>
+    
+</ContentPage>

@@ -1,55 +1,117 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CarRentalCompany.Microservices.CarMicroservice.Domain.AggregatesModel.CarAggregate;
+using CarRentalCompany.Microservices.CarMicroservice.Infra.DataAccess.Contexts;
 using CarRentalCompany.Microservices.CarMicroservice.Infra.DataAccess.Model;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using System;
+using System.Net;
 
 namespace CarRentalCompany.Microservices.CarMicroservice.Application.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; }
+
+        /// <summary>
+        /// Startup constructor
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="environment"></param>
+        public Startup(IConfiguration configuration,
+            IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            Environment = environment;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddAuthorization();
+
+            services.AddControllers();            
 
             services.AddScoped<ICarService, CarService>();
-            services.AddScoped<ICarRepository,CarRepository>();
+            services.AddScoped<ICarRepository, CarRepository>();
 
-            //services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-            //  .AddIdentityServerAuthentication(options =>
-            //  {
-            //      options.Authority = "https://CarRentalCompany-fernando-iam-microservice-identity.azurewebsites.net";
-            //      options.RequireHttpsMetadata = false;
-            //      options.ApiName = "CarMicroservice_ResourceApi";
+            //IdentityServer4
+            services.AddAuthorization();
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+              .AddIdentityServerAuthentication(options =>
+              {
+                  options.Authority = "https://CarRentalCompany-fernando-iam-microservice-identity.azurewebsites.net";
+                  options.RequireHttpsMetadata = false;
+                  options.ApiName = "CarMicroservice_ResourceApi";
 
-            //  });
+              });        
+
+             services.AddDbContext<DbContext, CarContext>(opt => opt
+            .UseSqlServer(Configuration.GetConnectionString("Aplicacao"), options =>
+            {
+                options.EnableRetryOnFailure(
+                    maxRetryCount: 10,
+                    maxRetryDelay: TimeSpan.FromSeconds(30),
+                    errorNumbersToAdd: null);
+            }
+            )
+            .EnableSensitiveDataLogging(Environment.IsDevelopment())
+            .UseQueryTrackingBehavior(QueryTrackingBehavior.TrackAll));
+
+            services.AddSwaggerGen(s =>
+            {
+                s.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Car Rental Company",
+                    Description = "Swagger surface",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Fernando Gomes",
+                        Email = "fdiniz88@gmail.com"
+                    }
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
+
+                app.UseExceptionHandler(
+                    options =>
+                    {
+                        options.Run(
+                            async context =>
+                            {
+                                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                                context.Response.ContentType = "text/html";
+                                var exceptionObject = context.Features.Get<IExceptionHandlerFeature>();
+                                if (null != exceptionObject)
+                                {
+                                    var errorMessage = $"<b>Error: {exceptionObject.Error.Message}</b> { exceptionObject.Error.StackTrace}";
+                                    await context.Response.WriteAsync(errorMessage).ConfigureAwait(false);
+                                }
+                            });
+                    }
+                    );
             }
 
             app.UseHttpsRedirection();
@@ -61,6 +123,16 @@ namespace CarRentalCompany.Microservices.CarMicroservice.Application.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger(c =>
+            {
+                c.RouteTemplate = "swagger/{documentName}/swagger.json";
+            });
+
+            app.UseSwaggerUI(s =>
+            {
+                s.SwaggerEndpoint("/swagger/v1/swagger.json", "Car API v1.0");
             });
         }
     }

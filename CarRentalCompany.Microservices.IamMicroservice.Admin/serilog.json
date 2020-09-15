@@ -20,7 +20,7 @@
             {
                 "Name": "MSSqlServer",
                 "Args": {
-                    "connectionString": "Server=tcp:carrentalcompany-fernando-db-server.database.windows.net,1433;Initial Catalog=CarRentalCompany-fernando-Db;Persist Security Info=False;User ID=fernando;Password=xxxxx;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;;",
+                    "connectionString": "Server=tcp:carrentalcompany-fernando-db-server.database.windows.net,1433;Initial Catalog=CarRentalCompany-fernando-Db;Persist Security Info=False;User ID=fernando;Password=xxxxxxxxxx;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;;",
                     "tableName": "Log",
                     "columnOptionsSection": {
                         "addStandardColumns": [ "LogEvent" ],

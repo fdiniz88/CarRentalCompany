@@ -5,7 +5,7 @@ namespace CarRentalCompany.Microservices.CarMicroservice.Domain.AggregatesModel.
     public class Car
     {
         public Guid Id { get; set; }
-        public Guid ReserveHolderId { get; set; }    
+       // public Guid ReserveHolderId { get; set; }    
         public string Description { get; set; }        
     }
 }

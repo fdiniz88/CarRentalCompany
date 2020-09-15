@@ -7,18 +7,18 @@ namespace CarRentalCompany.Microservices.CarMicroservice.Domain.AggregatesModel.
 {
     public class CarService : ICarService
     {
-        private readonly ICarRepository CarRepository;
+        private ICarRepository CarRepository;
 
         public CarService(ICarRepository CarRepository)
         {
             this.CarRepository = CarRepository;
         }      
-        public async Task<Car> Getcar(Guid id)
-        {
+        public async Task<Car> GetCar(Guid id)
+        {            
             return await CarRepository.ReadAsync(id);
         }
 
-        public async Task<IEnumerable<Car>> Getcars()
+        public async Task<IEnumerable<Car>> GetCars()
         {
             return await CarRepository.ReadAllAsync(); 
         }
@@ -32,8 +32,7 @@ namespace CarRentalCompany.Microservices.CarMicroservice.Domain.AggregatesModel.
         }
         public async Task<ReturnResult> PutCar(Guid id, Car car)
         {
-            ReturnResult ReturnResult = new ReturnResult();
-            ReturnResult.Action = "Atualização de carro";
+            ReturnResult ReturnResult = new ReturnResult();           
 
             Car Car = await CarRepository.ReadAsync(car.Id);
 
@@ -48,6 +47,7 @@ namespace CarRentalCompany.Microservices.CarMicroservice.Domain.AggregatesModel.
 
                 CarRepository.Update(Car);
                 await CarRepository.SaveChangesAsync();
+                ReturnResult.Action = "Atualização de carro";
             }
             return ReturnResult;
         }

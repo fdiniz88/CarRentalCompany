@@ -304,7 +304,7 @@ namespace CarRentalCompany.Microservices.IamMicroservice.Admin.Api.Controllers
             var createdUser = await _identityService.GetUserAsync(userId.ToString());
 
             //Add Role to the new User
-            var role = await _identityService.GetRoleAsync("125ccf16-efb6-4b1f-bd22-0590f9cf9ab9");
+            var role = await _identityService.GetRoleAsync("8539b18d-d63a-47f9-9092-f1a4f12b511f"); //ReserveHolder
             var userAndRole = new UserRoleApiDto<TKey>();
             userAndRole.UserId = createdUser.Id;
             userAndRole.RoleId = role.Id;
