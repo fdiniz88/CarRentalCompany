@@ -12,6 +12,6 @@ namespace CarRentalCompany.Microservices.ReserveMicroservice.Domain.AggregatesMo
         Task<Reserve> GetReserve(Guid id);
         Task<ReturnResult> PutReserve(Guid id, Reserve reserve);
         Task<ReturnResult> PostReserve(Reserve reserve);
-        Task<ReturnResult> DeleteReserve(Guid id);        
+        Task<ReturnResult> DeleteReserve(Guid id);
     }
 }

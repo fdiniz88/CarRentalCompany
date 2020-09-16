@@ -73,8 +73,7 @@ namespace CarRentalCompany.Microservices.ReserveMicroservice.Domain.AggregatesMo
         Task<ReturnResult> IReserveService.PutReserve(Guid id, Reserve reserve)
         {
             throw new NotImplementedException();
-        }
-
+        }           
     }
 
 }
